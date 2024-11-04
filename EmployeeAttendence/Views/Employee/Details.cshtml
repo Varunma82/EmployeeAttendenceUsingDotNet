@@ -1,0 +1,42 @@
+﻿@model Core.Entities.Employee
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<div class="container mt-5">
+    <h1 class="mb-4">Employee Details</h1>
+
+    <div class="card">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Employee Information</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4 font-weight-bold">Employee Code:</dt>
+                <dd class="col-sm-8">@Model.EmployeeCode</dd>
+
+                <dt class="col-sm-4 font-weight-bold">First Name:</dt>
+                <dd class="col-sm-8">@Model.FirstName</dd>
+
+                <dt class="col-sm-4 font-weight-bold">Last Name:</dt>
+                <dd class="col-sm-8">@Model.LastName</dd>
+
+                <dt class="col-sm-4 font-weight-bold">Date of Birth:</dt>
+                <dd class="col-sm-8">@Model.DOB.ToString("yyyy-MM-dd")</dd>
+
+                <dt class="col-sm-4 font-weight-bold">PAN:</dt>
+                <dd class="col-sm-8">@Model.PAN</dd>
+
+                <dt class="col-sm-4 font-weight-bold">Aadhaar:</dt>
+                <dd class="col-sm-8">@Model.Adhaar</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="mt-4">
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+        <a asp-action="Edit" asp-route-id="@Model.EmployeeId" class="btn btn-primary">Edit</a>
+        <a asp-action="Delete" asp-route-id="@Model.EmployeeId" class="btn btn-danger">Delete</a>
+    </div>
+</div>
